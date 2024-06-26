@@ -1,0 +1,31 @@
+plugins {
+    id 'org.springframework.boot' version '3.3.1'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_19
+    targetCompatibility = JavaVersion.VERSION_19
+}
+
+repositories {
+    mavenCentral()
+}
+
+group = "book.buddy"
+version = "1.0-SNAPSHOT"
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:3.3.1"
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+}
+
+springBoot {
+    mainClass = 'book.buddy.Main'
+}
